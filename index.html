@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Verify Kothotya Consultancy Services (KCS) internship certificates.">
+    <title>KCS Certificate Verification</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-mesh"></div>
+    
+    <main class="container">
+        <div class="glass-card">
+            <header class="header">
+                <div class="logo">
+                    <img src="logo.jpeg" alt="KCS Logo" class="logo-img" id="company-logo" onerror="this.style.display='none'">
+                    <div class="logo-text">
+                        <span class="logo-k">K</span><span class="logo-c">C</span><span class="logo-s">S</span>
+                    </div>
+                </div>
+                <h1>Kothotya Consultancy Services</h1>
+                <p class="tagline">Empowering Digital Growth</p>
+            </header>
+
+            <section id="search-section" class="section active">
+                <h2>Certificate Verification Portal</h2>
+                <p class="instructions">Enter the Internship Certificate ID below to verify its authenticity.</p>
+                
+                <form id="verify-form" class="form-group">
+                    <div class="input-wrapper">
+                        <i class="icon-search"></i>
+                        <input type="text" id="cert-id" placeholder="e.g. KCS-INT-2026-001" autocomplete="off" required>
+                    </div>
+                    <button type="submit" id="verify-btn" class="primary-btn">
+                        <span class="btn-text">Verify Certificate</span>
+                        <div class="spinner"></div>
+                    </button>
+                </form>
+                
+                <div id="error-message" class="error-msg hidden">
+                    <p>Invalid Certificate ID. Please check and try again.</p>
+                </div>
+            </section>
+
+            <section id="result-section" class="section hidden">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5 22 22 17.5 22 12C22 6.5 17.5 2 12 2C6.5 2 2 6.5 2 12C2 17.5 6.5 22 12 22Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M7.75 12L10.58 14.83L16.25 9.17004" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                
+                <div class="photo-container" id="photo-container">
+                    <div class="photo-circle">
+                        <a href="#" target="_blank" id="res-photo-link" class="photo-btn" aria-label="View intern photo">
+                            <img src="" alt="Intern photo" id="res-photo-img" class="photo-img">
+                            <span class="photo-fallback">View photo</span>
+                        </a>
+                    </div>
+                </div>
+
+                <h2 class="success-title">Certificate Verified</h2>
+                
+                <div class="certificate-details">
+                    <div class="detail-row">
+                        <span class="label">Certificate ID</span>
+                        <span class="value mono" id="res-id">KCS-INT-2026-001</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Intern Name</span>
+                        <span class="value highlight" id="res-name">John Doe</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Father's Name</span>
+                        <span class="value" id="res-father"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Course</span>
+                        <span class="value" id="res-course"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">College Name</span>
+                        <span class="value" id="res-college"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Role</span>
+                        <span class="value" id="res-role">Frontend Developer</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Duration</span>
+                        <span class="value" id="res-duration">Jan 2026 - Jun 2026</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Roll Number</span>
+                        <span class="value" id="res-roll"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Enrollment Number</span>
+                        <span class="value" id="res-enrollment"></span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="label">Issue Date</span>
+                        <span class="value" id="res-issue">June 30, 2026</span>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <a href="#" target="_blank" id="res-download-btn" class="primary-btn download-btn">Download Certificate</a>
+                    <button type="button" id="back-btn" class="secondary-btn">Verify Another Certificate</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
