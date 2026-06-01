@@ -18,27 +18,32 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Outfit', sans-serif;
     background-color: var(--color-dark);
     color: var(--color-text-primary);
     min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow-x: hidden;
     position: relative;
-    padding: 20px 0;
+    padding: clamp(14px, 4vw, 32px) 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* Dynamic Mesh Gradient Background */
 .background-mesh {
-    position: absolute;
-    top: 0;
-    left: 0;
+    position: fixed;
+    inset: 0;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     z-index: -1;
     background: 
         radial-gradient(circle at 15% 50%, rgba(10, 143, 92, 0.15), transparent 40%),
@@ -56,7 +61,7 @@ body {
 .container {
     width: 100%;
     max-width: 600px;
-    padding: 20px;
+    padding: clamp(10px, 3vw, 20px);
     perspective: 1000px;
 }
 
@@ -66,8 +71,8 @@ body {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
-    padding: 40px;
+    border-radius: clamp(18px, 4vw, 24px);
+    padding: clamp(24px, 6vw, 40px);
     box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
     position: relative;
     overflow: hidden;
@@ -95,11 +100,11 @@ body {
 /* Header & Typography */
 .header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: clamp(28px, 6vw, 40px);
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: clamp(2.25rem, 10vw, 3rem);
     font-weight: 800;
     letter-spacing: -2px;
     margin-bottom: 10px;
@@ -107,10 +112,11 @@ body {
     justify-content: center;
     align-items: center;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
 .logo-img {
-    width: 60px;
+    width: clamp(48px, 13vw, 60px);
     height: auto;
     object-fit: contain;
 }
@@ -125,13 +131,13 @@ body {
 .logo-s { color: var(--color-purple); }
 
 .header h1 {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 5vw, 1.5rem);
     font-weight: 600;
     margin-bottom: 5px;
 }
 
 .tagline {
-    font-size: 0.9rem;
+    font-size: clamp(0.72rem, 3vw, 0.9rem);
     color: var(--color-text-secondary);
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -178,7 +184,7 @@ body {
 
 input[type="text"] {
     width: 100%;
-    padding: 16px 20px;
+    padding: 15px 16px;
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
@@ -216,6 +222,8 @@ input[type="text"]:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 54px;
+    text-align: center;
 }
 
 .primary-btn:hover {
@@ -256,8 +264,8 @@ input[type="text"]:focus {
 }
 
 .success-icon {
-    width: 64px;
-    height: 64px;
+    width: clamp(52px, 15vw, 64px);
+    height: clamp(52px, 15vw, 64px);
     margin: 0 auto 20px;
     background: rgba(10, 143, 92, 0.2);
     color: var(--color-green);
@@ -279,15 +287,15 @@ input[type="text"]:focus {
 }
 
 .success-title {
-    font-size: 1.8rem;
+    font-size: clamp(1.45rem, 7vw, 1.8rem);
     color: var(--color-green);
-    margin-bottom: 30px;
+    margin-bottom: clamp(22px, 6vw, 30px);
 }
 
 .certificate-details {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 16px;
-    padding: 24px;
+    padding: clamp(18px, 5vw, 24px);
     text-align: left;
     margin-bottom: 30px;
 }
@@ -317,6 +325,7 @@ input[type="text"]:focus {
 .detail-row .value {
     font-size: 1.1rem;
     font-weight: 600;
+    overflow-wrap: anywhere;
 }
 
 .detail-row .value.mono {
@@ -326,7 +335,7 @@ input[type="text"]:focus {
 
 .detail-row .value.highlight {
     color: var(--color-purple);
-    font-size: 1.25rem;
+    font-size: clamp(1.12rem, 5vw, 1.25rem);
 }
 
 .secondary-btn {
@@ -340,6 +349,7 @@ input[type="text"]:focus {
     font-family: 'Outfit', sans-serif;
     cursor: pointer;
     transition: var(--transition-smooth);
+    min-height: 50px;
 }
 
 .secondary-btn:hover {
@@ -374,8 +384,8 @@ input[type="text"]:focus {
 }
 
 .photo-circle {
-    width: 136px;
-    height: 136px;
+    width: clamp(112px, 34vw, 136px);
+    height: clamp(112px, 34vw, 136px);
     border-radius: 50%;
     padding: 5px;
     background:
@@ -459,12 +469,13 @@ input[type="text"]:focus {
 .site-footer {
     width: 100%;
     max-width: 600px;
-    padding: 0 20px;
+    padding: 0 clamp(18px, 5vw, 28px);
     margin-top: 18px;
     text-align: center;
     color: var(--color-text-secondary);
     font-size: 0.9rem;
     line-height: 1.7;
+    overflow-wrap: anywhere;
 }
 
 .footer-name {
@@ -474,16 +485,79 @@ input[type="text"]:focus {
 }
 
 @media (max-width: 480px) {
+    body {
+        padding-top: 8px;
+        padding-bottom: 18px;
+    }
+
+    .container {
+        padding: 8px;
+    }
+
     .glass-card {
-        padding: 30px 20px;
+        padding: 24px 16px;
     }
+
     .logo {
-        font-size: 2.5rem;
+        gap: 10px;
     }
+
+    .tagline {
+        letter-spacing: 1.4px;
+    }
+
+    .instructions {
+        font-size: 0.9rem;
+    }
+
+    input[type="text"] {
+        padding: 14px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width: 100%;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-size: 0.98rem;
+    }
+
+    .certificate-details {
+        margin-bottom: 24px;
+    }
+
+    .detail-row .label {
+        font-size: 0.76rem;
+    }
+
+    .detail-row .value {
+        font-size: 1rem;
+    }
+
     .header h1 {
-        font-size: 1.2rem;
+        line-height: 1.25;
     }
+
     .site-footer {
         font-size: 0.82rem;
+        line-height: 1.55;
+    }
+}
+
+@media (max-width: 360px) {
+    .glass-card {
+        padding: 22px 14px;
+    }
+
+    .logo-text {
+        gap: 3px;
+    }
+
+    .success-title {
+        line-height: 1.15;
+    }
+
+    .photo-circle {
+        padding: 4px;
     }
 }
