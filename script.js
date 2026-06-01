@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             issueDate: '30 May 2026',
             photoUrl: 'https://drive.google.com/file/d/1fiU3NxJqII3l8XxlE3aeuQiDx_xDPfFR/view?usp=sharing',
             photoImgUrl: 'https://drive.google.com/thumbnail?id=1fiU3NxJqII3l8XxlE3aeuQiDx_xDPfFR&sz=w400',
-            certUrl: 'https://drive.google.com/file/d/1G6l9Kn2X_fsvoFpuezf2snyDBqJ4qAtw/view?usp=sharing'
+            certUrl: 'https://drive.google.com/file/d/1Pl6HnHflO_ZW3CRhdtI9JPtOAARbSqRO/view?usp=sharing'
         }
     };
 
