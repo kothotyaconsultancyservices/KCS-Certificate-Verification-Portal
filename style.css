@@ -484,6 +484,12 @@ input[type="text"]:focus {
     letter-spacing: 0.5px;
 }
 
+.copyright {
+    margin-top: 8px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.82rem;
+}
+
 @media (max-width: 480px) {
     body {
         padding-top: 8px;
@@ -541,6 +547,10 @@ input[type="text"]:focus {
     .site-footer {
         font-size: 0.82rem;
         line-height: 1.55;
+    }
+
+    .copyright {
+        font-size: 0.76rem;
     }
 }
 
